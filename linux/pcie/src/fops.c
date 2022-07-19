@@ -307,7 +307,7 @@ long hailo_bar_transfer(struct hailo_pcie_board *pBoard, unsigned long arg)
         return -ENOMEM;
     }
     // check for valid input
-    if ((MAX_BAR <= transfer->bar_index) || (NULL == transfer->buffer)) {
+    if (MAX_BAR <= transfer->bar_index) {
         hailo_err(pBoard, "HAILO_BAR_TRANSFER, invalid index %u, size %zu, buffer %px\n",
             transfer->bar_index, transfer->count, transfer->buffer);
         return -EINVAL;

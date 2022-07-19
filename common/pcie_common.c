@@ -463,9 +463,6 @@ long hailo_pcie_read_firmware_log(struct hailo_pcie_resources *resources, struct
         return -EINVAL;
     }
 
-    if (NULL == params->buffer) {
-        return -EINVAL;
-    }
     if (0 == params->buffer_size) {
         params->read_bytes = 0;
         return 0;
